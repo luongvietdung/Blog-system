@@ -1,0 +1,14 @@
+<li id="micropost-<%= entry.id %>">
+  <h2>
+    <%= link_to entry.title, entry %>
+  </h2>
+   <span class="timestamp">
+    Posted by <%= link_to entry.user.name, entry.user %>, <%= time_ago_in_words entry.created_at %> ago
+  </span>
+  <p class="content">
+    <%= entry.body %>
+  </p>
+
+  
+  
+</li>
