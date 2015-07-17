@@ -1,7 +1,11 @@
-<li>
-  <strong><%= link_to comment.user.name, comment.user %></strong>
-  <%= comment.content %>, 
-  <span class="timestamp">
-     <%= time_ago_in_words comment.created_at %> ago
-  </span>
-</li>
+<div class="media">
+    <a class="pull-left" href="<%= user_path %>">
+        <%= gravatar_for comment.user %>
+    </a>
+    <div class="media-body">
+        <h4 class="media-heading"><%= link_to comment.user.name, comment.user %>
+            <small><%= time_ago_in_words comment.created_at %> ago</small>
+        </h4>
+    <%= comment.content %>
+    </div>
+</div>

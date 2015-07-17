@@ -10,10 +10,10 @@ Rails.application.routes.draw do
 
   #get 'signup', to: 'users#new'
   root 'entries#index'
-  get 'login', to: 'sessions#new'
+  get 'signin', to: 'sessions#new'
   get 'signup', to: 'users#new'
-  post 'login', to: 'sessions#create'
-  delete 'logout', to: 'sessions#destroy'
+  post 'signin', to: 'sessions#create'
+  delete 'signout', to: 'sessions#destroy'
 
   resources :users, only: [:create, :show] do
     get :feed, on: :collection

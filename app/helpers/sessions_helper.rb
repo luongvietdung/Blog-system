@@ -31,8 +31,8 @@ module SessionsHelper
   def store_session
     session[:forwarding_url] = request.url if request.get?
   end
-  def redirect_to_back_or(default)
-    redirect_to (session[:forwarding_url] || default)
+  def redirect_to_back_or(default_url)
+    redirect_to (session[:forwarding_url] || default_url)
     session.delete :forwarding_url
   end
 
@@ -42,6 +42,6 @@ module SessionsHelper
     cookies.delete(:remember_token)
   end
   def current_user?(user)
-    @current_user == user
+    current_user == user
   end
 end

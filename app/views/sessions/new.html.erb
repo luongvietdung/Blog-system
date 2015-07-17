@@ -1,8 +1,8 @@
-<h1>Log in</h1>
+<h1>Sign in</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url:"/login") do |f| %>
+    <%= form_for(:session, url:"/signin") do |f| %>
       <%= f.label :email %>
       <%= f.email_field :email, class: "form-control" %>
       <%= f.label :password %>
@@ -12,7 +12,7 @@
       <span>Remember me on this computer</span>
           
       </p>
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+      <%= f.submit "Sign in", class: "btn btn-primary" %>
     <% end %>
     <p>New User? <%= link_to "Sign up now!", "/signup" %></p>
   </div>

@@ -1,6 +1,6 @@
+<h1>All entries </h1>
 <div class="row">
    <% if @entries.any? %>
-   <%= will_paginate @entries %>
    <ol class="microposts">
       <%= render @entries %>
     </ol>

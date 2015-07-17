@@ -16,12 +16,12 @@
               <li><%= link_to "My feed", feed_users_path %></li> 
               <li><%= link_to "Profiles", current_user %></li>
               <li class="divider" /> 
-              <li><%= link_to "Log out",   '/logout', method: "delete" %></li> 
+              <li><%= link_to "Sign out",   '/signout', method: "delete" %></li> 
             </ul>
           </li>
         <% else %>
           <li><%= link_to "Sign up",   '/signup' %></li> 
-          <li><%= link_to "Sign in",   '/login' %></li> 
+          <li><%= link_to "Sign in",   '/signin' %></li> 
           <% end %>
       </ul>
     </div>

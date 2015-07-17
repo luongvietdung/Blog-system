@@ -1,5 +1,12 @@
 <div>
-  <h2><%= @entry.title %></h2>
+  <h2>
+    <%= @entry.title %>
+    <% if current_user?(@entry.user) %>
+      <a href="<%= edit_entry_path %>" alt="Edit">
+        <span class="glyphicon glyphicon-edit"></span>
+      </a>
+    <% end %>
+  </h2>
   <span class="timestamp">
     Posted by <%= link_to @entry.user.name, @entry.user %>, <%= time_ago_in_words @entry.created_at %> ago
   </span>
@@ -9,15 +16,16 @@
   </p>
   <hr/>
   <div class="comments">
-  <h2>Comments(<%= @comments.count %>)</h2>
+  <h2>Comments (<%= @comments.count %>)</h2>
     <%= render @comments %>
+
+    <%= will_paginate @comments %>
+    <br/>
     <% if logged_in? %>
       <%= render 'comment_form' %>
     <% else %>
-      Please <%= link_to "sign in", "/login" %> to comment
+      <h3>Please <%= link_to "sign in", "/signin" %> to comment</h3>
     <% end %>
-
-    <%= will_paginate @comments %>
   </div>
 
 </div>

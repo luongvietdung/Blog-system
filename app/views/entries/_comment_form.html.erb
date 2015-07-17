@@ -1,3 +1,9 @@
-<%= form_for [@entry, @entry.comments.build] do |f| %>
-  <%= f.text_field :content, class: 'form_control' %>
-<% end %>
+<div class="well">
+  <h4>Leave a Comment:</h4>
+  <%= form_for [@entry, @entry.comments.build], html: {role: "form"} do |f| %>
+    <div class="form-group">
+      <%= f.text_area :content, rows: 5, class: 'form_control' %>
+    </div>
+    <%= f.submit "Send", class: "btn btn-primary" %>
+  <% end %>
+</div>
