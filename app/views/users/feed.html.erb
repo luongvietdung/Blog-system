@@ -1,9 +1,0 @@
-<div class="row">
-    <h2>My feed( <%= @entries.count %>)</h2>
-   <% if @entries.any? %>
-   <ol class="microposts">
-      <%= render @entries %>
-    </ol>
-    <%= will_paginate @entries %>
-   <% end %>
-</div>

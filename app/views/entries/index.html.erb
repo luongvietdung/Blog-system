@@ -1,9 +1,0 @@
-<div class="row">
-   <% if @entries.any? %>
-   <%= will_paginate @entries %>
-   <ol class="microposts">
-      <%= render @entries %>
-    </ol>
-    <%= will_paginate @entries %>
-   <% end %>
-</div>
