@@ -22,8 +22,8 @@ class EntriesController < ApplicationController
 
   end
   def update
-    @entry = User.find(params[:id])
-    if @entry.update_attributes(user_params)
+    @entry = Entry.find(params[:id])
+    if @entry.update_attributes(entry_params)
       flash[:success] = "Entry updated"
       redirect_to @entry
     else
@@ -38,7 +38,7 @@ class EntriesController < ApplicationController
   def destroy
     @entry.destroy
     flash[:success] = "Entry deleted"
-    redirect_to request.referrer || root_url
+    redirect_to root_url
   end
 
   private

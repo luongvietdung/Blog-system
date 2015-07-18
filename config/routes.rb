@@ -1,13 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'comments/create'
-
-  get 'comments/destroy'
-
-  get 'relationships/create'
-
-  get 'relationships/destroy'
-
   #get 'signup', to: 'users#new'
   root 'entries#index'
   get 'signin', to: 'sessions#new'
@@ -18,11 +10,9 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :show] do
     get :feed, on: :collection
   end
-  resources :entries, only: [:show, :new, :edit, :update, :destroy, :create] do
-    resources :comments, on: :member
-  end
-  
+  resources :entries
   resources :relationships, only: [:create, :destroy]
+  resources :comments, only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

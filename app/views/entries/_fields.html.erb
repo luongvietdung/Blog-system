@@ -1,5 +1,17 @@
 <%= render 'shared/error_messages', object: f.object %>
-<%= f.label :title %>
-<%= f.text_field :title, class: 'form-control' %>
-<%= f.label :body %>
-<%= f.text_area :body, class: 'form-control' %>
+
+<div class="form-group">
+    <%= f.text_field :title, placeholder:"Display title", class: 'form-control input-lg' %>
+</div>
+
+<div class="form-group">
+    <%= f.text_area :body, placeholder:"Body", row: 20, class: 'form-control' %>
+</div>
+
+
+
+
+
+
+
+

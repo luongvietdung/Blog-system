@@ -1,20 +1,23 @@
-<h1>Sign in</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url:"/signin") do |f| %>
-      <%= f.label :email %>
-      <%= f.email_field :email, class: "form-control" %>
-      <%= f.label :password %>
-      <%= f.password_field :password, class: "form-control" %>
-      <p>
-      <%= f.check_box :remember_me%>
-      <span>Remember me on this computer</span>
-          
-      </p>
-      <%= f.submit "Sign in", class: "btn btn-primary" %>
+<h1 class="sign-up-title">Sign in</h1>
+<div class="row" style="margin-top:40px;">
+  <div class="col-md-4 col-md-offset-4">
+    <%= form_for(:session, url:"/signin", class: "form-signin", html: {role:"form"}) do |f| %>
+    <fieldset>
+      
+      <%= f.email_field :email, placeholder: "E-mail", class: "form-control email-title" %>
+      <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+      <div class="checkbox" style="width:140px;">
+        <label>
+          <%= f.check_box :remember_me %> Remember Me
+        </label>
+      </div>
+      <%= f.submit "Sign in", class: "btn btn-lg btn-success btn-block" %>
+      <p class="text-center"><%= link_to "Register for an account?", "/signup" %></p>
+      </fieldset>
     <% end %>
-    <p>New User? <%= link_to "Sign up now!", "/signup" %></p>
+    
   </div>
 
 </div>
+
+

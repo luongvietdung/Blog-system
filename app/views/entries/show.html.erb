@@ -5,6 +5,7 @@
       <a href="<%= edit_entry_path %>" alt="Edit">
         <span class="glyphicon glyphicon-edit"></span>
       </a>
+      <%= link_to "", @entry, method: "delete", data: {confirm: "Are you sure?"}, class: "glyphicon glyphicon-remove" %> 
     <% end %>
   </h2>
   <span class="timestamp">
@@ -15,17 +16,16 @@
     <%= @entry.body %>
   </p>
   <hr/>
-  <div class="comments">
-  <h2>Comments (<%= @comments.count %>)</h2>
-    <%= render @comments %>
-
-    <%= will_paginate @comments %>
-    <br/>
-    <% if logged_in? %>
-      <%= render 'comment_form' %>
-    <% else %>
-      <h3>Please <%= link_to "sign in", "/signin" %> to comment</h3>
-    <% end %>
-  </div>
+  
+  <%= render 'comments', comments: @comments %>
+  
+  <br/>
+  <% if logged_in? %>
+  <%= render 'comment_form' %>
+  <% else %>
+    <h3>Please <%= link_to "sign in", "/signin" %> to comment</h3>
+  <% end %>
+  
+  
 
 </div>

@@ -1,12 +1,13 @@
 <h1>Create new entry</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for @entry do |f| %>
+    <%= form_for(@entry, class:"form", html:{role:"form"}) do |f| %>
       <%= render 'fields', f: f %>
-      
-      <%= f.submit "Create entry", class: "btn btn-primary" %>
-    
+      <div class="form-group">
+        <div class="col-sm-10 col-sm-offset-2">
+            <%= f.submit "Create entry", class: "btn btn-primary btn-lg test" %>
+        </div>
+    </div>
     <% end %>
-
   </div>
 </div>
