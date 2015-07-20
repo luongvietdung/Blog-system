@@ -8,3 +8,11 @@
     <%= f.submit "Send", class: "btn btn-primary" %>
   <% end %>
 </div>
+<script type="text/javascript">
+  $('#comment_content').keypress(function(e) {
+    if (e.keyCode == 13 && !e.shiftKey) {
+        e.preventDefault();
+        $("form").submit();
+    }
+});
+</script>
