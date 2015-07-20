@@ -7,17 +7,24 @@ class CommentsController < ApplicationController
     @comment = @entry.comments.build(comment_params)
     @comment.user_id = current_user.id
     @comment.save
-    redirect_to @entry
-    
+    respond_to do |format|
+      format.html {redirect_to @entry}
+      format.js
+    end   
     
   end
 
   def destroy
     @entry = @comment.entry
+
     if @comment.destroy
       flash[:success] = "Comment deleted"
     end
-    redirect_to @entry
+    respond_to do |format|
+      format.html {redirect_to @entry}
+      format.js
+    end
+    
   end
 
   private

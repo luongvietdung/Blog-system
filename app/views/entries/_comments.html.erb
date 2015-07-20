@@ -1,5 +1,8 @@
-<div id="comments">
+<div>
   <h2>Comments (<%= comments.count %>)</h2>
-  <%= render comments %>
+  <div  id="comments">
+    <%= render comments %>  
+  </div>
+  
   <%= will_paginate comments %>
 </div>
