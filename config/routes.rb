@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post 'signin', to: 'sessions#create'
   delete 'signout', to: 'sessions#destroy'
 
-  resources :users, only: [:create, :show] do
+  resources :users, only: [:create, :show, :index, :edit, :update] do
     get :feed, on: :collection
   end
   resources :entries

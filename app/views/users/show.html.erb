@@ -7,6 +7,10 @@
         
       </h1>
       <span class="glyphicon glyphicon-envelope"></span> <%= @user.email %>
+      <% if current_user?(@user) %>
+      <br/>
+      <%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %>
+      <% end %>
     </section>
   </aside>
 

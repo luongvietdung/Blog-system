@@ -1,12 +1,12 @@
-<h1 style="color:dimgray">Sign up</h1>
+<h1 style="color:dimgray">Update profile</h1>
 <div class="row" style="margin-top:40px;">
   <div class="col-md-4 col-md-offset-4">
     <%= form_for @user, class: "form-signin", html: {role:"form"} do |f| %>
-      
+      <%= render 'shared/error_messages', object: f.object %>
       <fieldset>
       <%= render 'field', f: f %>
       <br/>
-      <%= f.submit "Create my account", class: "btn btn-lg btn-primary btn-block" %>
+      <%= f.submit "Update profile", class: "btn btn-lg btn-primary btn-block" %>
       </fieldset>
     <% end %>
 
