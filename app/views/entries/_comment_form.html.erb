@@ -3,7 +3,7 @@
   <%= form_for @entry.comments.build, html: {role: "form"}, remote: true do |f| %>
     <div class="form-group">
       <%= hidden_field_tag :entry_id, @entry.id %>
-      <%= f.text_area :content, rows: 3, class: 'form_control' %>
+      <%= f.text_area :content, rows: 5, placeholder: "Please click Enter key for comment(or Shift + Enter key for new line!)", class: 'form_control' %>
     </div>
     <%= f.submit "Send", class: "btn btn-primary" %>
   <% end %>
