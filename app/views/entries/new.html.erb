@@ -4,9 +4,7 @@
     <%= form_for(@entry, class:"form", html:{role:"form"}) do |f| %>
       <%= render 'fields', f: f %>
       <div class="form-group">
-        <div class="col-sm-10 col-sm-offset-2">
-            <%= f.submit "Create entry", class: "btn btn-primary btn-lg test" %>
-        </div>
+         <%= f.submit "Create entry", class: "btn btn-primary btn-lg"%>
     </div>
     <% end %>
   </div>

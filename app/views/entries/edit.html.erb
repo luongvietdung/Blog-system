@@ -3,9 +3,9 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for @entry do |f| %>
       <%= render 'fields', f: f %>
-      
-      <%= f.submit "Edit entry", class: "btn btn-primary btn-lg test" %>
-    
+      <div class="form-group">
+         <%= f.submit "Edit entry", class: "btn btn-primary btn-lg" %>
+    </div>
     <% end %>
 
   </div>

@@ -22,7 +22,7 @@ end
 
 # Microposts
 users = User.order(:created_at).take(6)
-50.times do
+99.times do
   title = Faker::Name.title
   body = Faker::Lorem.sentence(60)
   users.each { |user| user.entries.create!(body: body, title: title) }
@@ -35,14 +35,13 @@ followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
 
-entries = Entry.order(:created_at).take(10)
-users = User.order(:created_at).take(6)
-1.times do
+entries = Entry.order(created_at: :desc).take(20)
+users = User.order(:created_at).take(10)
+5.times do
   entries.each do |entry| 
     users.each do |user|
-      content = Faker::Lorem.sentence(1)
+      content = Faker::Lorem.sentence(10)
       entry.comments.create!(content: content, user_id: user.id)
     end
-    
   end
 end
